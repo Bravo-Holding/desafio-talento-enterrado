@@ -1,0 +1,94 @@
+
+/* ============================================================
+   FATIA 3 — método (.method-*), o que muda (.change-*),
+   evolução (.evo-*), a dúvida (.doubt-*). Só regras novas.
+============================================================ */
+
+/* ---------- 6. método: 3 pilares ---------- */
+.method-pillars { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 34px; }
+@media (min-width: 900px) { .method-pillars { grid-template-columns: repeat(3, 1fr); } }
+.method-pillar {
+  background: var(--void);
+  color: var(--bone);
+  border-radius: var(--radius);
+  border-top: 4px solid var(--blood);
+  padding: 26px 24px 24px;
+  text-align: center;
+  transition: transform .3s var(--ease);
+}
+@media (hover: hover) { .method-pillar:hover { transform: translateY(-4px); } }
+.method-ico { width: 48px; height: 48px; margin: 0 auto 12px; color: var(--bone); display: flex; align-items: center; justify-content: center; }
+.method-ico svg { width: 32px; height: 32px; }
+.method-pillar h3 { color: var(--bone-hi); margin: 0 0 6px; font-size: 1.55rem; }
+.method-pillar p { color: var(--bone); font-size: 1rem; line-height: 1.5; }
+
+/* ---------- 6. método: linha do tempo ---------- */
+.method-steps { max-width: 780px; margin: 34px auto 0; display: flex; flex-direction: column; }
+.method-step { display: flex; flex-direction: column; gap: 12px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.method-step:last-child { border-bottom: 0; }
+/* chip do dia: bloco vermelho, texto branco (7,7:1); o vermelho nunca é a cor da letra */
+.method-day {
+  align-self: flex-start;
+  flex: 0 0 auto;
+  display: inline-block;
+  min-width: 112px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.1rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+  color: #FFFFFF;
+  background: var(--blood);
+  padding: 9px 12px 7px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+.method-step-body { flex: 1; color: var(--text-soft); font-size: 1rem; line-height: 1.6; }
+.method-step-body h3 { margin: 0 0 6px; }
+.method-step-body b { color: var(--text); display: inline-block; margin-top: 6px; }
+@media (min-width: 640px) {
+  .method-step { flex-direction: row; gap: 22px; }
+  .method-day { margin-top: 4px; }
+}
+
+/* ---------- 7. o que muda: 4 cenas ---------- */
+.change-list { list-style: none; padding: 0; max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 900px) { .change-list { grid-template-columns: 1fr 1fr; } }
+.change-item {
+  position: relative;
+  background: var(--pitch);
+  border: 1px solid var(--iron);
+  border-radius: var(--radius);
+  padding: 20px 22px 20px 56px;
+  font-size: clamp(1.02rem, 1.35vw, 1.16rem);
+  line-height: 1.5;
+  color: var(--bone-hi);
+}
+.change-item::before {
+  content: '';
+  position: absolute;
+  left: 22px;
+  top: 25px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--blood);
+  box-shadow: 0 0 0 3px var(--void), 0 0 0 4px var(--iron);
+}
+
+/* ---------- 8. evolução: grupos de prints ---------- */
+/* label centralizado sobre a grade, alinhado com a .shots-label da prova real */
+.evo-group { max-width: 712px; margin-left: auto; margin-right: auto; text-align: center; }
+.evo-group .shots { margin-top: 6px; }
+.evo-group .shot-solo { margin-top: 6px; }
+.evo-group .shot-cap { text-align: left; }
+
+/* ---------- 9. a dúvida: print único ---------- */
+/* o print do Lucas tem 316px de origem; a largura menor evita esticar */
+.doubt-shot { max-width: 372px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .method-pillar { transition: none; }
+}
