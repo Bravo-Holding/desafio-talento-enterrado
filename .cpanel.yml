@@ -1,0 +1,7 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH="$HOME/ebravoholding.com/pages/desafios/v8/"
+    - /bin/mkdir -p $DEPLOYPATH
+    - /bin/cp -R index.html style.css favicon og-image.jpg ewertton.webp $DEPLOYPATH
+    - /bin/mkdir -p $DEPLOYPATH/depoimentos
+    - /bin/cp depoimentos/*.webp $DEPLOYPATH/depoimentos/

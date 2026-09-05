@@ -1,0 +1,10 @@
+# Internos, não publicar
+CLAUDE.md
+.claude/
+docs/
+ref/
+.DS_Store
+TODO.md
+
+# Prints de depoimento: só os .webp vão pro repo/deploy; os .jpg são fonte local
+depoimentos/*.jpg

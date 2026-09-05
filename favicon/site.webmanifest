@@ -1,0 +1,23 @@
+{
+  "name": "Desafio 21 Dias",
+  "short_name": "CAOS",
+  "description": "Do CAOS à Ordem em 21 dias. 1 áudio + 1 tarefa por dia no WhatsApp.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#E8420A",
+  "theme_color": "#E8420A",
+  "icons": [
+    {
+      "src": "web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
