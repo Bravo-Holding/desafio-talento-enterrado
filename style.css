@@ -607,3 +607,275 @@
   .deliv-i-chat .d { opacity: 1; }
   .bonus-i-play .ring { opacity: 0; }
 }
+
+
+/* ============ FATIA 5 ============ */
+/* ============================================================
+   FATIA 5 — autor (.autor-), FAQ (.faq-), CTA final (.final-),
+   rodapé (.foot-), sticky (.sticky-bar), modal (.lead-*).
+   Só regras novas; base vem do crítico e do style.css.
+   Mobile-first; breakpoints 640 / 900.
+============================================================ */
+
+/* ---------- 14. autor ---------- */
+.autor-grid { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: center; max-width: 960px; }
+.autor-photo { width: 100%; max-width: 260px; margin: 0 auto; }
+.autor-photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 24px;
+  border: 3px solid var(--blood);
+  background: var(--pitch);
+  box-shadow: var(--shadow);
+}
+.autor-body { text-align: center; }
+/* a assinatura em Bebas: a frase da guerra em --bone-hi, o nome em --bone-mute */
+.autor-quote {
+  margin: 26px 0 0;
+  padding: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  letter-spacing: .03em;
+  line-height: 1.1;
+  color: var(--bone-hi);
+  text-wrap: balance;
+}
+.autor-sign { margin-top: 8px; font-size: .95rem; color: var(--bone-mute); }
+.section.dark .autor-sign { color: var(--bone-mute); }
+@media (min-width: 900px) {
+  /* start, não center: a coluna de texto é muito mais alta que a foto e o
+     center abria um vazio de ~300px em cima dela. */
+  .autor-grid { grid-template-columns: 280px 1fr; gap: clamp(28px, 4vw, 52px); align-items: start; }
+  .autor-photo { max-width: none; margin: 0; }
+  .autor-body { text-align: left; }
+}
+
+/* ---------- 15. FAQ (details nativo, sem JS) ---------- */
+.faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.faq-item {
+  background: #FFFFFF;
+  border: 2px solid var(--void);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-weight: 700;
+  font-size: 1.02rem;
+  line-height: 1.35;
+  color: var(--text);
+  transition: background .2s;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::marker { content: ''; }
+/* "+" desenhado com duas barras; aberto gira 45° e vira "×" (onde o modelo pinta de amarelo, aqui é --bone) */
+.faq-ico { position: relative; flex: 0 0 22px; width: 22px; height: 22px; transition: transform .25s var(--ease); }
+.faq-ico::before, .faq-ico::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: var(--void);
+  border-radius: 2px;
+  transform: translate(-50%, -50%);
+}
+.faq-ico::before { width: 16px; height: 3px; }
+.faq-ico::after { width: 3px; height: 16px; }
+.faq-item[open] summary { background: var(--bone); }
+.faq-item[open] .faq-ico { transform: rotate(45deg); }
+.faq-a { padding: 14px 20px 18px; color: var(--text-soft); font-size: 1rem; line-height: 1.6; }
+@media (hover: hover) { .faq-item summary:hover { background: var(--bg-soft); } .faq-item[open] summary:hover { background: var(--bone); } }
+
+/* ---------- 16. CTA final ---------- */
+.final-box {
+  max-width: 660px;
+  margin: 24px auto 0;
+  padding: 20px 22px;
+  background: var(--pitch);
+  border: 1px solid var(--iron);
+  border-left: 4px solid var(--blood);
+  border-radius: 20px;
+  text-align: left;
+}
+.final-box p { color: var(--bone); font-size: clamp(1.02rem, 1.35vw, 1.16rem); line-height: 1.6; }
+#cta-final .cta-note { color: var(--bone-mute); }
+
+/* ---------- rodapé ---------- */
+.foot {
+  background: var(--void);
+  color: var(--bone-mute);
+  border-top: 1px solid var(--iron);
+  padding: 34px 0 40px;
+  text-align: center;
+  font-size: .86rem;
+  line-height: 1.6;
+}
+.foot-brand { margin: 0; color: var(--bone-mute); }
+.foot-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin-top: 8px; }
+.foot-links a { color: var(--bone-mute); text-decoration: underline; text-underline-offset: 3px; transition: color .2s; }
+.foot-links a:hover { color: var(--bone-hi); }
+.foot :focus-visible { outline-color: var(--bone-hi); }
+
+/* ---------- sticky (todos os viewports) ---------- */
+.sticky-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px clamp(14px, 4vw, 28px);
+  padding-bottom: calc(10px + env(safe-area-inset-bottom));
+  background: rgba(10, 9, 7, .96);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid var(--iron);
+  color: var(--bone);
+  transform: translateY(110%);
+  transition: transform .35s var(--ease);
+}
+.sticky-bar.show { transform: translateY(0); }
+html:not(.js) .sticky-bar { transform: none; }
+.sticky-bar-text { font-size: .85rem; line-height: 1.3; color: var(--bone); min-width: 0; }
+.sticky-bar-text strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.15rem;
+  letter-spacing: .05em;
+  line-height: 1;
+  color: var(--bone-hi);
+  margin-bottom: 3px;
+}
+.sticky-bar .cta { flex: 0 0 auto; padding: 13px 22px 11px; font-size: 1.08rem; min-height: 48px; box-shadow: 0 4px 0 var(--cta-ledge); }
+.sticky-bar .cta:hover { box-shadow: 0 6px 0 var(--cta-ledge); }
+.sticky-bar :focus-visible { outline-color: var(--bone-hi); }
+@media (min-width: 640px) {
+  .sticky-bar { justify-content: center; gap: 28px; }
+  .sticky-bar-text { display: flex; align-items: baseline; gap: 12px; }
+  .sticky-bar-text strong { margin-bottom: 0; }
+}
+
+/* ---------- modal de captura (portado do v7, cores do tema claro) ----------
+   Nasce display:none: zero custo de render até o clique. */
+.lead-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(10, 9, 7, .85);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+.lead-modal.is-open { display: flex; }
+.lead-modal__card {
+  position: relative;
+  width: 100%;
+  max-width: 25rem;
+  background: var(--bg);
+  color: var(--text);
+  border: 2px solid var(--blood);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .55);
+  padding: 1.75rem 1.5rem 1.5rem;
+  animation: leadPop 200ms ease;
+}
+@keyframes leadPop {
+  from { opacity: 0; transform: translateY(8px) scale(.98); }
+  to { opacity: 1; transform: none; }
+}
+.lead-modal__close {
+  position: absolute;
+  top: .6rem;
+  right: .6rem;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.lead-modal__close:hover { background: var(--bg-soft); }
+.lead-modal__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.9rem;
+  line-height: 1.05;
+  letter-spacing: .02em;
+  color: var(--void);
+  margin: 0 0 .4rem;
+}
+.lead-modal__sub { font-size: .95rem; color: var(--text-soft); margin-bottom: 1.25rem; }
+.lead-field { margin-bottom: .85rem; }
+.lead-field label { display: block; font-size: .8rem; font-weight: 600; color: var(--text-soft); margin-bottom: .3rem; }
+.lead-field input {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: .8rem .9rem;
+  border: 1.5px solid rgba(42, 36, 33, .3);
+  border-radius: var(--radius-sm);
+  background: #FFFFFF;
+  color: var(--text);
+  min-height: 52px;
+}
+/* Placeholder: sem regra, o UA entrega ~#A9A9A9 (2,3:1 no branco). */
+.lead-field input::placeholder { color: #7A6E64; opacity: 1; }
+.lead-field input:focus { outline: none; border-color: var(--blood); }
+.lead-field input.is-invalid { border-color: var(--blood); border-width: 2px; }
+/* O erro é TEXTO, não só borda: cor sozinha não comunica (WCAG 1.4.1). O role="alert" faz o anúncio.
+   Único lugar em que vermelho vira letra: --blood-deep sobre branco dá 9,4:1. */
+.lead-error { margin-top: .3rem; font-size: .8rem; line-height: 1.35; font-weight: 600; color: var(--blood-deep); }
+.lead-error[hidden] { display: none; }
+/* Consentimento: libera o botão de submit. Área de toque do label inteira, não só a caixa. */
+.lead-consent { display: flex; align-items: flex-start; gap: .6rem; margin: .9rem 0 .25rem; }
+.lead-consent input[type="checkbox"] { flex-shrink: 0; width: 22px; height: 22px; margin: 0; accent-color: var(--blood); cursor: pointer; }
+.lead-consent label { font-size: .82rem; line-height: 1.4; color: var(--text-soft); cursor: pointer; }
+.lead-phone { display: flex; gap: .5rem; }
+.lead-phone__ddi {
+  display: flex;
+  align-items: center;
+  padding: 0 .8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-soft);
+  border: 1.5px solid rgba(42, 36, 33, .3);
+  border-radius: var(--radius-sm);
+  background: var(--bg-soft);
+  white-space: nowrap;
+}
+.lead-phone input { flex: 1; }
+.lead-modal__submit { margin-top: .5rem; }
+/* Botão travado tem que PARECER travado: papel desbotado, sem ledge, sem hover. */
+.lead-modal__submit:disabled,
+.lead-modal__submit:disabled:hover {
+  background: var(--bone-mute);
+  box-shadow: none;
+  transform: none;
+  cursor: not-allowed;
+}
+.lead-modal__hint { margin-top: .7rem; font-size: .75rem; color: var(--text-muted); text-align: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-ico, .faq-item summary, .foot-links a { transition: none; }
+  /* sem movimento a barra fica fixa e visível, como sem JS */
+  .sticky-bar { transition: none; transform: none; }
+  .lead-modal__card { animation: none; }
+}

@@ -254,7 +254,9 @@
     .cta:active { transform: translateY(2px); box-shadow: 0 3px 0 var(--cta-ledge), 0 10px 24px rgba(22, 163, 74, .26); }
     .cta .arrow { display: inline-block; transition: transform .25s var(--ease); }
     .cta:hover .arrow { transform: translateX(4px); }
-    .cta.large { padding: 21px 40px 19px; font-size: clamp(1.4rem, 1.8vw, 1.55rem); }
+    /* mínimo em 24px (não 1.4rem = 23,8px): 24px é o corte de "texto grande" da WCAG,
+       onde o branco sobre o verde do checkout (3,3:1) passa. Abaixo disso, não passa. */
+    .cta.large { padding: 21px 40px 19px; font-size: clamp(24px, 1.8vw, 1.55rem); }
     .cta.full { width: 100%; }
 
     /* ---------- chip da faixa de confiança ---------- */
@@ -1006,9 +1008,144 @@
     </div>
   </section>
 
-<!-- @@SECTIONS@@ -->
+<!-- ============ 14. AUTOR ============ -->
+  <section class="section dark" id="autor">
+    <div class="container autor-grid">
+      <div class="autor-photo rv">
+        <img src="ewertton.webp" width="480" height="640" loading="lazy" decoding="async" alt="Foto de Ewertton Bravo">
+      </div>
+      <div class="autor-body">
+        <p class="eyebrow rv">Quem vai estar no seu WhatsApp todo dia</p>
+        <h2 class="rv">Meu problema nunca foi preguiça. Era o inimigo usando o medo travestido de fé pra me manter <span class="hl">enterrado</span>.</h2>
+        <p class="lead mt16 rv">Procrastinei 27 anos. Do ensino fundamental aos 38. Sabia o que Deus tinha me chamado pra fazer e não fazia, e ainda carregava a culpa de estar negligenciando a obra, sem entender que negligência tem nome na Palavra: Remiyah (Jeremias 48:10).</p>
+        <p class="lead mt16 rv">Em fevereiro de 2024 minha filha nasceu e eu fiz uma promessa diante de Deus: ela não vai crescer ouvindo o pai contar o que poderia ter sido, vai ver o pai vivendo o chamado. Larguei mais de 20 anos de CLT e enfrentei de frente a fortaleza que eu mesmo ajudei o inimigo a construir na minha cabeça.</p>
+        <p class="lead mt16 rv">Esse desafio é a arma que eu queria ter recebido lá atrás. É a porta de entrada do Método Remiyah, criado pra matar exatamente isso: o cristão que enterra o que recebeu porque tem medo, e chama esse medo de "esperar em Deus". A Parábola dos Talentos costura tudo: você não recebeu o que tem pra deixar o inimigo te convencer a enterrar. Recebeu pra multiplicar, e cada dia parado é terreno que ele não devolve sozinho.</p>
+        <blockquote class="autor-quote rv">"Tiro cristãos da procrastinação. É guerra, não terapia."</blockquote>
+        <p class="autor-sign rv">Ewertton Bravo &middot; Fé e Procrastinação</p>
+      </div>
+    </div>
+  </section>
 
-  <!-- reveal: a fatia 5 move isto pro bloco final de scripts -->
+  <!-- ============ 15. FAQ ============ -->
+  <section class="section soft" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow rv">Dúvidas comuns</p>
+        <h2 class="rv">Antes de ir embora, deixa eu responder o que o inimigo está <span class="hl">sussurrando agora</span> pra te fazer fechar essa página.</h2>
+      </div>
+      <div class="faq-list rv">
+        <details class="faq-item">
+          <summary>Já tentei de tudo e nada durou. Por que esse seria diferente?<span class="faq-ico" aria-hidden="true"></span></summary>
+          <div class="faq-a">Porque as outras tentativas atacaram o sintoma (organização, disciplina). Esse ataca a raiz: o medo espiritualizado que te mantém parado. Sem derrubar a raiz, qualquer método dura uma semana.</div>
+        </details>
+        <details class="faq-item">
+          <summary>20 minutos por dia resolvem mesmo?<span class="faq-ico" aria-hidden="true"></span></summary>
+          <div class="faq-a">Não é o tempo que resolve. É a obediência diária que quebra o padrão. O inimigo não teme sua boa intenção, teme sua ação repetida.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Isso é conteúdo religioso ou um método prático?<span class="faq-ico" aria-hidden="true"></span></summary>
+          <div class="faq-a">As duas coisas, e propositalmente. Fé sem prática é exatamente o esconderijo que te trouxe até aqui.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Preciso entender de tecnologia ou de produtividade?<span class="faq-ico" aria-hidden="true"></span></summary>
+          <div class="faq-a">Não. Você precisa só ouvir o áudio e fazer a tarefa de 20 minutos por dia. O sistema carrega o peso técnico, você carrega a obediência.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Como recebo o conteúdo?<span class="faq-ico" aria-hidden="true"></span></summary>
+          <div class="faq-a">Direto no seu WhatsApp, 7h da manhã, todos os dias, por 7 dias.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Travei num dia. Consigo falar com você?<span class="faq-ico" aria-hidden="true"></span></summary>
+          <div class="faq-a">Sim. Acesso direto a mim durante os 7 dias. Ninguém enfrenta essa guerra sozinho.</div>
+        </details>
+        <details class="faq-item">
+          <summary>E depois dos 7 dias?<span class="faq-ico" aria-hidden="true"></span></summary>
+          <div class="faq-a">O sistema vira hábito espiritual e prático, você continua com as ferramentas, sem mim mandando o áudio, porque a fortaleza já caiu. E quem enviou o resultado todos os dias fecha comigo numa sessão 1:1 de 20 minutos.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Uso de IA faz parte do desafio?<span class="faq-ico" aria-hidden="true"></span></summary>
+          <div class="faq-a">Só como apoio de organização (Google Tasks, Agenda, Drive), nunca no lugar da sua obediência diária.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 16. CTA FINAL ============ -->
+  <section class="section dark" id="cta-final">
+    <div class="container narrow center">
+      <p class="eyebrow rv">Agora é com você</p>
+      <h2 class="rv">Você já sabe exatamente o que Deus te chamou pra fazer. A pergunta não é "quando". É <span class="hl">até quando</span> você vai deixar o inimigo administrar sua agenda.</h2>
+      <div class="final-box rv">
+        <p>A segunda-feira que vem vai ser idêntica a essa se você não quebrar o padrão agora. E daqui a 1 ano você vai estar exatamente onde está hoje, só que com mais um ano de talento enterrado e mais um ano de terreno cedido.</p>
+      </div>
+      <div class="mt40 rv"><a href="https://pay.hotmart.com/W105539649V?checkoutMode=10" class="cta large" target="_blank" rel="noopener">Quero desenterrar meu talento &middot; R$ 67 <span class="arrow">&#8594;</span></a></div>
+      <p class="cta-note rv">Pagamento seguro &middot; Garantia 7 dias &middot; Acesso imediato</p>
+    </div>
+  </section>
+
+<!-- ============ RODAPÉ ============ -->
+  <footer class="foot">
+    <div class="container foot-inner">
+      <p class="foot-brand">Ewertton Bravo &middot; Fé e Procrastinação &middot; 2026</p>
+      <nav class="foot-links" aria-label="Links do rodapé">
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Termos de Uso</a>
+        <a href="mailto:ewertton.bravo@gmail.com">ewertton.bravo@gmail.com</a>
+        <span>@ewerttonbravo</span>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ============ STICKY (aparece depois do #metodo, some sobre #oferta e #cta-final) ============ -->
+  <div class="sticky-bar" id="sticky" role="complementary" aria-label="Chamada para ação fixa">
+    <div class="sticky-bar-text">
+      <strong>Desafio 7 Dias</strong>
+      R$ 67 &middot; 20 min/dia
+    </div>
+    <a href="https://pay.hotmart.com/W105539649V?checkoutMode=10" class="cta" target="_blank" rel="noopener">Quero começar <span class="arrow">&#8594;</span></a>
+  </div>
+
+  <!-- LEAD MODAL: captura nome/email/whatsapp antes do checkout. Dispara Lead (Pixel + CAPI) e grava no Supabase. CSS em style.css (não-crítico). -->
+  <div class="lead-modal" id="lead-modal" role="dialog" aria-modal="true" aria-labelledby="lead-modal-title">
+    <div class="lead-modal__card">
+      <button type="button" class="lead-modal__close" id="lead-modal-close" aria-label="Fechar">&times;</button>
+      <h2 class="lead-modal__title" id="lead-modal-title">Falta só um passo</h2>
+      <p class="lead-modal__sub">Preencha seus dados para começar o desafio de 7 dias.</p>
+      <form id="lead-form" novalidate>
+        <div class="lead-field">
+          <label for="lead-name">Nome completo</label>
+          <input type="text" id="lead-name" name="name" autocomplete="name" placeholder="Seu nome completo" required
+            aria-describedby="lead-name-erro" />
+          <p class="lead-error" id="lead-name-erro" role="alert" hidden></p>
+        </div>
+        <div class="lead-field">
+          <label for="lead-email">E-mail</label>
+          <input type="email" id="lead-email" name="email" autocomplete="email" inputmode="email" placeholder="Insira seu melhor e-mail" required
+            aria-describedby="lead-email-erro" />
+          <p class="lead-error" id="lead-email-erro" role="alert" hidden></p>
+        </div>
+        <div class="lead-field">
+          <label for="lead-phone">WhatsApp</label>
+          <div class="lead-phone">
+            <span class="lead-phone__ddi">+55</span>
+            <input type="tel" id="lead-phone" name="phone" autocomplete="tel-national" inputmode="numeric" placeholder="(00) 0 0000 0000" required
+              aria-describedby="lead-phone-erro" />
+          </div>
+          <p class="lead-error" id="lead-phone-erro" role="alert" hidden></p>
+        </div>
+        <div class="lead-consent">
+          <input type="checkbox" id="lead-consent" name="consent" />
+          <label for="lead-consent">Concordo em receber comunicações sobre o desafio por WhatsApp e e-mail.</label>
+        </div>
+        <button type="submit" class="cta large full lead-modal__submit" id="lead-submit" disabled>
+          Quero começar o desafio
+        </button>
+        <p class="lead-modal__hint">Seus dados ficam seguros. Sem spam.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============ SCRIPTS ============ -->
   <script>
     /* reveal + marca-texto: cada .rv entra uma vez; os .hl dentro dele acendem junto.
        Com prefers-reduced-motion (ou sem IntersectionObserver) tudo aparece de uma vez. */
@@ -1031,7 +1168,303 @@
       }, { threshold: .12, rootMargin: '0px 0px -30px 0px' });
       els.forEach(function (el) { io.observe(el); });
     })();
+
+    /* sticky: mostra depois que a seção [data-sticky-trigger] (#metodo) sai por cima;
+       esconde enquanto #oferta ou #cta-final estão na tela, pra não cobrir o botão principal.
+       Sem IntersectionObserver o CSS deixa a barra fixa visível. */
+    (function () {
+      var bar = document.getElementById('sticky');
+      var trigger = document.querySelector('[data-sticky-trigger]');
+      if (!bar || !trigger || !('IntersectionObserver' in window)) return;
+      var covering = {};
+      var tick = false;
+      /* O "já passou do método" é MEDIDO a cada update, não guardado do callback do observer.
+         Guardado, um pulo de âncora que salta a seção inteira não gera transição nenhuma
+         e a barra fica presa no estado anterior. */
+      function update() {
+        var past = trigger.getBoundingClientRect().bottom < 0;
+        var covered = Object.keys(covering).some(function (k) { return covering[k]; });
+        bar.classList.toggle('show', past && !covered);
+      }
+      function onScroll() {
+        if (tick) return;
+        tick = true;
+        requestAnimationFrame(function () { tick = false; update(); });
+      }
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { covering[e.target.id] = e.isIntersecting; });
+        update();
+      }, { threshold: 0 });
+      document.querySelectorAll('#oferta, #cta-final').forEach(function (el) { io.observe(el); });
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll, { passive: true });
+      update();
+    })();
   </script>
-<!-- @@FOOTER@@ -->
+  <!-- HOTMART LAUNCHER SDK — carregado de forma não-bloqueante após LCP e scripts críticos -->
+  <script id="hotmart_launcher_script">
+    (function () {
+      function loadHotmart() {
+        (function (l, a, u, n, c, h, e, r) {
+          l['HotmartLauncherObject'] = c; l[c] = l[c] || function () {
+            (l[c].q = l[c].q || []).push(arguments);
+          }; l[c].l = 1 * new Date();
+          h = a.createElement(u); e = a.getElementsByTagName(u)[0];
+          h.async = 1; h.src = 'https://launcher.hotmart.com/launcher.js';
+          e.parentNode.insertBefore(h, e);
+        })(window, document, 'script', 'https://launcher.hotmart.com/launcher.js', 'hot');
+
+        hot('account', 'be7aeb20-4303-3f6c-b0c3-3050352275ba');
+      }
+
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadHotmart, { timeout: 4000 });
+      } else {
+        window.addEventListener('load', loadHotmart);
+      }
+    })();
+  </script>
+  <!-- ORIGEM DAS VENDAS (UTM + sck) — Daniela Tiemi / Fluxo Copia e Cola © 2024. Reescreve hrefs no load; injeta sck nos links Hotmart/Kiwify. Ver CLAUDE.md > RASTREAMENTO DE VENDAS. -->
+  <script>
+    var currentUrl = window.location.href;
+    var url = new URL(currentUrl);
+    var pagePath = url.pathname.replace(/^\/|\/$/g, '');
+    var cleanReferrer = document.referrer ? document.referrer.replace(/^https?:\/\//, '') : '';
+    var utmSource = url.searchParams.get('utm_source') || cleanReferrer || 'Direto';
+    var utmMedium = url.searchParams.get('utm_medium') || 'Organico';
+    var utmCampaign = url.searchParams.get('utm_campaign') || 'Direto';
+    var utmContent = url.searchParams.get('utm_content') || pagePath || 'Home';
+    var utmTerm = url.searchParams.get('utm_term') || '';
+    var links = document.querySelectorAll('a');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].hasAttribute('popup')) {
+        var destinationUrl = links[i].href;
+        if (!destinationUrl.includes('#')) {
+          var hasUtmParams = destinationUrl.includes('utm_source') ||
+            destinationUrl.includes('utm_medium') ||
+            destinationUrl.includes('utm_campaign') ||
+            destinationUrl.includes('utm_content') ||
+            destinationUrl.includes('utm_term');
+          if (!hasUtmParams) {
+            destinationUrl += (destinationUrl.indexOf('?') === -1 ? '?' : '&');
+            destinationUrl += 'utm_source=' + utmSource;
+            destinationUrl += '&utm_medium=' + utmMedium;
+            destinationUrl += '&utm_campaign=' + utmCampaign;
+            destinationUrl += '&utm_content=' + utmContent;
+            destinationUrl += '&utm_term=' + utmTerm;
+            if (destinationUrl.includes('pay.hotmart') || destinationUrl.includes('pay.kiwify')) {
+              var sckValue = utmSource + '-' + utmMedium + '-' + utmCampaign + '-' + utmContent + '-' + utmTerm;
+              destinationUrl += '&sck=' + sckValue;
+            }
+            links[i].href = destinationUrl;
+          }
+        }
+      }
+    }
+  </script>
+
+  <script>
+    (function () {
+      // FLAG preCheckout: desligada, o modal sai do DOM e nenhum listener e registrado.
+      // Os <a> de checkout voltam a funcionar nativamente (UTM+sck ja estao no href).
+      // Nesse braco nao ha Lead no Pixel, nem CAPI, nem lead gravado no Supabase.
+      if (!window.FLAGS || !window.FLAGS.preCheckout) {
+        var inerte = document.getElementById('lead-modal');
+        if (inerte) inerte.remove();
+        return;
+      }
+
+      var EDGE_URL = 'https://iodseuinjheacuoptaau.supabase.co/functions/v1/capture-lead';
+      var PIXEL_ID = '25723610987317406';
+      var VALUE = 67.00, CURRENCY = 'BRL';
+
+      var modal = document.getElementById('lead-modal');
+      var form = document.getElementById('lead-form');
+      var elName = document.getElementById('lead-name');
+      var elEmail = document.getElementById('lead-email');
+      var elPhone = document.getElementById('lead-phone');
+      var elSubmit = document.getElementById('lead-submit');
+      var elClose = document.getElementById('lead-modal-close');
+      var elConsent = document.getElementById('lead-consent');
+      var checkoutHref = null;   // href já decorado com UTM+sck, guardado no clique
+      var submitting = false;
+      var gatilho = null;        // elemento que abriu o modal, pra devolver o foco no fechamento
+      var CONSENT_TEXT = 'Concordo em receber comunicações sobre o desafio por WhatsApp e e-mail.';
+
+      // O consentimento LIBERA o botão; formato de campo NÃO trava o botão, acusa no clique.
+      // A diferença é proposital: o checkbox é uma regra visível logo acima do botão, então
+      // travar ali não deixa ninguém no escuro. Ja "e-mail precisa de TLD" e "nome precisa de
+      // sobrenome" sao regras invisiveis, e travar nelas foi o que fazia a pessoa sair sem saber.
+      function syncConsent() { elSubmit.disabled = !elConsent.checked; }
+      elConsent.addEventListener('change', syncConsent);
+
+      function getCookie(name) {
+        var m = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+        return m ? m.pop() : '';
+      }
+      function getParam(name) {
+        return new URLSearchParams(window.location.search).get(name) || '';
+      }
+      function digits(s) { return (s || '').replace(/\D/g, ''); }
+      function emailOk(v) { return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v.trim()); }
+      function nameOk(v) { return v.trim().split(/\s+/).filter(Boolean).length >= 2; }
+      function phoneOk(v) { var d = digits(v); return d.length >= 10 && d.length <= 11; }
+
+      // Antes daqui o botão só ficava cinza quando algo estava errado, sem dizer o quê.
+      // Quem digitava só o primeiro nome, ou um e-mail sem o final, encarava um botão
+      // morto e ia embora. As regras abaixo são as MESMAS de sempre (mexer nelas
+      // degradaria o match do CAPI); o que mudou é que agora elas falam.
+      var CAMPOS = [
+        { el: elName, ok: nameOk, erro: document.getElementById('lead-name-erro'), msg: 'Digite nome e sobrenome.' },
+        { el: elEmail, ok: emailOk, erro: document.getElementById('lead-email-erro'), msg: 'Confira o e-mail. Precisa ter @ e um final, como .com' },
+        { el: elPhone, ok: phoneOk, erro: document.getElementById('lead-phone-erro'), msg: 'Informe DDD e número, 10 ou 11 dígitos.' }
+      ];
+
+      function mostrarErro(c) {
+        c.el.classList.add('is-invalid');
+        c.el.setAttribute('aria-invalid', 'true');
+        c.erro.textContent = c.msg;
+        c.erro.hidden = false;
+      }
+      function limparErro(c) {
+        c.el.classList.remove('is-invalid');
+        c.el.removeAttribute('aria-invalid');
+        c.erro.textContent = '';
+        c.erro.hidden = true;
+      }
+
+      function validate() {
+        return CAMPOS.every(function (c) { return c.ok(c.el.value); });
+      }
+
+      CAMPOS.forEach(function (c) {
+        // Enquanto digita, só apaga o erro. Não acusa erro no meio da digitação.
+        c.el.addEventListener('input', function () { limparErro(c); });
+        // Ao sair do campo, acusa. Campo intocado e vazio não leva bronca.
+        c.el.addEventListener('blur', function () {
+          if (!c.el.value.trim()) return;
+          c.ok(c.el.value) ? limparErro(c) : mostrarErro(c);
+        });
+      });
+
+      function openModal(href, origem) {
+        checkoutHref = href;
+        gatilho = origem || null;
+        CAMPOS.forEach(limparErro);   // reabrir não herda a bronca da tentativa anterior
+        syncConsent();
+        modal.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        setTimeout(function () { elName.focus(); }, 50);
+      }
+      function closeModal() {
+        modal.classList.remove('is-open');
+        document.body.style.overflow = '';
+        if (gatilho && gatilho.focus) gatilho.focus();   // foco volta pro botão que abriu
+        gatilho = null;
+      }
+
+      // Focus trap: sem isto o Tab sai do último campo e vai passeando pelos links da
+      // página atrás do véu, que o usuário nem enxerga. aria-modal="true" informa, não prende.
+      modal.addEventListener('keydown', function (e) {
+        if (e.key !== 'Tab') return;
+        var focaveis = modal.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (!focaveis.length) return;
+        var primeiro = focaveis[0];
+        var ultimo = focaveis[focaveis.length - 1];
+        if (e.shiftKey && document.activeElement === primeiro) {
+          e.preventDefault(); ultimo.focus();
+        } else if (!e.shiftKey && document.activeElement === ultimo) {
+          e.preventDefault(); primeiro.focus();
+        }
+      });
+
+      // Intercepta os botões de checkout (listener delegado; href já decorado pelo script de UTM/sck)
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href*="pay.hotmart"]');
+        if (!a) return;
+        e.preventDefault();
+        openModal(a.href, a);
+      });
+
+      elClose.addEventListener('click', closeModal);
+      modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (submitting) return;
+
+        // O botão não nasce mais desabilitado: clique inválido tem que produzir
+        // explicação, não silêncio. Marca todos os campos ruins e leva o foco pro primeiro.
+        if (!validate()) {
+          var primeiro = null;
+          CAMPOS.forEach(function (c) {
+            if (c.ok(c.el.value)) { limparErro(c); return; }
+            mostrarErro(c);
+            if (!primeiro) primeiro = c.el;
+          });
+          if (primeiro) primeiro.focus();
+          return;
+        }
+
+        submitting = true;
+        elSubmit.disabled = true;
+        elSubmit.textContent = 'Aguarde...';
+
+        var fullName = elName.value.trim().replace(/\s+/g, ' ');
+        var parts = fullName.split(' ');
+        var firstName = (parts[0] || '').toLowerCase();
+        var lastName = parts.slice(1).join(' ').toLowerCase();
+        var email = elEmail.value.trim().toLowerCase();
+        var phone = '55' + digits(elPhone.value);  // E.164 sem '+', padrão de match da Meta
+
+        var eventId = (window.crypto && crypto.randomUUID) ? crypto.randomUUID()
+          : 'lead-' + Date.now() + '-' + Math.floor(Math.random() * 1e6);
+
+        var fbp = getCookie('_fbp');
+        var fbc = getCookie('_fbc');
+        if (!fbc) {
+          var fbclid = getParam('fbclid');
+          if (fbclid) fbc = 'fb.1.' + Date.now() + '.' + fbclid;
+        }
+
+        // 1. Pixel Lead com Advanced Matching (o fbq hasheia os valores crus)
+        if (window.fbq) {
+          fbq('init', PIXEL_ID, { em: email, ph: phone, fn: firstName, ln: lastName, external_id: email });
+          fbq('track', 'Lead', { value: VALUE, currency: CURRENCY }, { eventID: eventId });
+        }
+
+        // 2. Grava lead + CAPI (server-side). keepalive: sobrevive ao redirect.
+        var payload = {
+          product: 'desafio-21-dias',
+          value: VALUE, currency: CURRENCY,
+          full_name: fullName, first_name: firstName, last_name: lastName,
+          email: email, phone: phone,
+          utm_source: getParam('utm_source'), utm_medium: getParam('utm_medium'),
+          utm_campaign: getParam('utm_campaign'), utm_content: getParam('utm_content'),
+          utm_term: getParam('utm_term'),
+          sck: (function () { var m = (checkoutHref || '').match(/[?&]sck=([^&]+)/); return m ? decodeURIComponent(m[1]) : ''; })(),
+          fbp: fbp, fbc: fbc,
+          page_path: window.location.pathname,
+          consent: elConsent.checked, consent_text: CONSENT_TEXT,
+          event_id: eventId,
+          event_source_url: window.location.href
+        };
+        try {
+          fetch(EDGE_URL, {
+            method: 'POST', keepalive: true,
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          }).catch(function () {});
+        } catch (err) {}
+
+        // 3. Segue pro checkout (UTM+sck já no href). Prefill Hotmart desligado (privacidade).
+        var dest = checkoutHref || 'https://pay.hotmart.com/W105539649V?checkoutMode=10';
+        // Para LIGAR o prefill, troque a linha acima por:
+        // var dest = (checkoutHref || '...') + '&email=' + encodeURIComponent(email) + '&name=' + encodeURIComponent(fullName);
+        setTimeout(function () { window.location.href = dest; }, 250);
+      });
+    })();
+  </script>
 </body>
 </html>
