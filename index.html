@@ -320,6 +320,9 @@
       overflow: hidden;
       box-shadow: var(--shadow);
     }
+    /* enquanto o vídeo não existe, o mockup fica solto sobre o fundo claro.
+       Ao trocar o miolo pelo embed, tirar o is-empty do .frame e a moldura volta. */
+    .vslot .frame.is-empty { background: transparent; border-color: transparent; box-shadow: none; }
     @media (max-width: 640px) { .vslot .frame { aspect-ratio: 4 / 5; } }
     .vslot .frame > iframe, .vslot .frame > video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
     .frame-inner { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
@@ -493,10 +496,10 @@
       <p class="brand rv"><img src="favicon/favicon.svg" width="40" height="40" alt="" aria-hidden="true">Desafio 7 Dias &middot; O Talento Enterrado</p>
       <p class="eyebrow rv">Pra quem ora por um sinal e adia o que Ele já mandou</p>
       <h1 class="rv">O inimigo não precisou te derrubar. Bastou <span class="hl">te convencer a esperar</span>.</h1>
-      <p class="hero-sub rv mt16">Todo dia, 7h da manhã no seu WhatsApp: 1 áudio de 2 min e 1 tarefa prática. 20 minutos por dia, 7 dias, pra desenterrar o talento que você tem e retomar o terreno que o inimigo tomou.</p>
+      <p class="hero-sub rv mt16">Todo dia, 7h da manhã no seu WhatsApp: 1 áudio e 1 tarefa prática. 20 minutos por dia, 7 dias, pra desenterrar o talento que você tem e retomar o terreno que o inimigo tomou.</p>
 
       <div class="vslot rv">
-        <div class="frame">
+        <div class="frame is-empty">
           <!-- VÍDEO FUTURO: trocar o miolo deste .frame pelo embed do YouTube (ver .ytlite do modelo) -->
           <div class="frame-inner">
             <div class="wa-stage">
