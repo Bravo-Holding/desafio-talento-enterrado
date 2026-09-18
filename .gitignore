@@ -3,6 +3,7 @@ CLAUDE.md
 .claude/
 docs/
 ref/
+configs/
 .DS_Store
 TODO.md
 
