@@ -18,7 +18,7 @@
    .stats / .stat números grandes em Bebas, o <em> vira bloco --blood
    .shots-label   legenda centralizada acima dos prints
    .shots         grade fluida de prints; .shots-4 estreita a 712px
-   .shot          cartão de print (imagem + .shot-cap)
+   .shot          print (a moldura branca vem da própria imagem)
    .shot-solo     um print só, centralizado, 470px
    .disc          disclaimer pequeno centralizado
    .note          nota lateral com filete --blood (fundo papel)
@@ -86,21 +86,15 @@
 .shots-label { text-align: center; font-size: .95rem; color: var(--text-muted); margin-top: 34px; font-weight: 600; }
 .section.dark .shots-label { color: var(--bone-mute); }
 .shots { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; max-width: 1060px; margin: 16px auto 0; align-items: flex-start; }
-.shot { flex: 0 1 380px; background: #FFFFFF; border: 1px solid var(--line); border-radius: var(--radius); padding: 10px; box-shadow: var(--shadow-sm); }
-.shot img { width: 100%; height: auto; border-radius: var(--radius-sm); }
+.shot { flex: 0 1 380px; border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); }
+.shot img { display: block; width: 100%; height: auto; border-radius: var(--radius-sm); }
 .shot-solo { max-width: 470px; margin: 22px auto 0; flex: none; }
 .shots-4 { max-width: 712px; }
-.shot-cap { font-size: .94rem; line-height: 1.45; color: var(--text-soft); margin-top: 11px; padding: 2px 4px 0; font-weight: 600; }
-.shot-cap b { font-weight: 700; color: var(--text); }
-.section.dark .shot { border-color: var(--iron); }
 @media (max-width: 760px) { .shot { flex: 1 1 100%; } .shots { gap: 24px; } }
 
 @media (prefers-reduced-motion: reduce) {
   .card { transition: none; }
 }
-
-/* fix: pares de prints lado a lado no desktop (base tinha flex-basis 380 > 712/2) */
-.shots-4 .shot{flex-basis:340px}
 
 /* ============ FATIA 2 ============ */
 /* ============================================================
@@ -330,11 +324,6 @@
 .evo-group { max-width: 712px; margin-left: auto; margin-right: auto; text-align: center; }
 .evo-group .shots { margin-top: 6px; }
 .evo-group .shot-solo { margin-top: 6px; }
-.evo-group .shot-cap { text-align: left; }
-
-/* ---------- 9. a dúvida: print único ---------- */
-/* o print do Lucas tem 316px de origem; a largura menor evita esticar */
-.doubt-shot { max-width: 372px; }
 
 @media (prefers-reduced-motion: reduce) {
   .method-pillar { transition: none; }
