@@ -2,7 +2,7 @@ deployment:
   tasks:
     # O docroot varia conforme a versao do cPanel: $HOME/<dominio> (padrao atual) ou
     # $HOME/public_html/<dominio> (addon domain legado). Usa o que existir.
-    - 'export DEPLOYPATH="$([ -d "$HOME/ebravoholdingo.shop" ] && echo "$HOME/ebravoholdingo.shop" || echo "$HOME/public_html/ebravoholdingo.shop")/"'
+    - 'export DEPLOYPATH="$([ -d "$HOME/ebravoholdingo.shop" ] && echo "$HOME/ebravoholdingo.shop" || echo "$HOME/public_html/ebravoholdingo.shop")/desafio-talento-enterrado/"'
     - /bin/mkdir -p $DEPLOYPATH
     - /bin/cp -R index.html style.css favicon og-image.jpg ewertton.webp $DEPLOYPATH
     - /bin/mkdir -p $DEPLOYPATH/depoimentos
