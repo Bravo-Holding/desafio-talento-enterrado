@@ -590,7 +590,7 @@
         <li>Uma rotina que roda no WhatsApp, sem app, sem planner, sem depender de força de vontade.</li>
       </ul>
 
-      <div class="hero-cta hi"><a href="https://pay.hotmart.com/W105539649V?checkoutMode=10" class="cta large" target="_blank" rel="noopener">Quero começar o desafio <span class="arrow">&#8594;</span></a></div>
+      <div class="hero-cta hi" data-sticky-trigger><a href="https://pay.hotmart.com/W105539649V?checkoutMode=10" class="cta large" target="_blank" rel="noopener">Quero começar o desafio <span class="arrow">&#8594;</span></a></div>
 
       <div class="hero-trust-strip hi">
         <span class="chip"><span class="dot"></span>216 pessoas pelo método</span>
@@ -748,8 +748,8 @@
     </div>
   </section>
 
-<!-- ============ 6. O MÉTODO (gatilho do sticky) ============ -->
-  <section class="section" id="metodo" data-sticky-trigger>
+<!-- ============ 6. O MÉTODO ============ -->
+  <section class="section" id="metodo">
     <div class="container">
       <div class="section-head">
         <p class="eyebrow rv">Como funciona</p>
@@ -1100,8 +1100,6 @@
     <div class="container foot-inner">
       <p class="foot-brand">Ewertton Bravo &middot; Fé e Procrastinação &middot; 2026</p>
       <nav class="foot-links" aria-label="Links do rodapé">
-        <a href="#">Política de Privacidade</a>
-        <a href="#">Termos de Uso</a>
         <a href="mailto:ewertton.bravo@gmail.com">ewertton.bravo@gmail.com</a>
         <span>@ewerttonbravo</span>
       </nav>
@@ -1181,7 +1179,7 @@
       els.forEach(function (el) { io.observe(el); });
     })();
 
-    /* sticky: mostra depois que a seção [data-sticky-trigger] (#metodo) sai por cima;
+    /* sticky: mostra depois que o [data-sticky-trigger] (botão do hero) sai por cima;
        esconde enquanto #oferta ou #cta-final estão na tela, pra não cobrir o botão principal.
        Sem IntersectionObserver o CSS deixa a barra fixa visível. */
     (function () {
@@ -1190,8 +1188,8 @@
       if (!bar || !trigger || !('IntersectionObserver' in window)) return;
       var covering = {};
       var tick = false;
-      /* O "já passou do método" é MEDIDO a cada update, não guardado do callback do observer.
-         Guardado, um pulo de âncora que salta a seção inteira não gera transição nenhuma
+      /* O "já passou do botão do hero" é MEDIDO a cada update, não guardado do callback do observer.
+         Guardado, um pulo de âncora que salta o hero inteiro não gera transição nenhuma
          e a barra fica presa no estado anterior. */
       function update() {
         var past = trigger.getBoundingClientRect().bottom < 0;
