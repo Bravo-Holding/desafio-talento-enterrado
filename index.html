@@ -349,7 +349,9 @@
       background: var(--blood) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 11px no-repeat;
       border: 2px solid var(--void);
     }
-    .hero-cta { margin-top: 30px; }
+    .hero-cta { margin-top: 24px; }
+    .hero-price { margin: 10px auto 0; font-size: 1rem; font-weight: 600; color: var(--text-soft); }
+    .hero-price s { color: var(--text-muted); font-weight: 400; }
     .hero-trust-strip { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px; margin-top: 20px; }
 
     /* ============================================================
@@ -504,6 +506,9 @@
       <h1 class="hi">O inimigo não precisou te derrubar. Bastou <span class="hl">te convencer a esperar</span>.</h1>
       <p class="hero-sub hi mt16">Todo dia, 7h da manhã no seu WhatsApp: 1 áudio e 1 tarefa prática. 20 minutos por dia, 7 dias, pra desenterrar o talento que você tem e retomar o terreno que o inimigo tomou.</p>
 
+      <div class="hero-cta hi" data-sticky-trigger><a href="https://pay.hotmart.com/W105539649V?checkoutMode=10" class="cta large">Quero começar o desafio&nbsp;&middot;&nbsp;R$&nbsp;67 <span class="arrow">&#8594;</span></a></div>
+      <p class="hero-price hi">De <s>R$ 197</s> por R$ 67</p>
+
       <div class="vslot hi">
         <div class="frame is-empty">
           <!-- VÍDEO FUTURO: trocar o miolo deste .frame pelo embed do YouTube (ver .ytlite do modelo) -->
@@ -590,10 +595,8 @@
         <li>Uma rotina que roda no WhatsApp, sem app, sem planner, sem depender de força de vontade.</li>
       </ul>
 
-      <div class="hero-cta hi" data-sticky-trigger><a href="https://pay.hotmart.com/W105539649V?checkoutMode=10" class="cta large" target="_blank" rel="noopener">Quero começar o desafio <span class="arrow">&#8594;</span></a></div>
-
       <div class="hero-trust-strip hi">
-        <span class="chip"><span class="dot"></span>216 pessoas pelo método</span>
+        <span class="chip"><span class="dot"></span>216 alunos no Método Remiyah</span>
         <span class="chip"><span class="dot"></span>20 min por dia</span>
         <span class="chip"><span class="dot"></span>7 dias de garantia</span>
         <span class="chip"><span class="dot"></span>Acesso hoje</span>
@@ -610,7 +613,7 @@
         <p class="lead mt16 rv">Prints enviados por alunos no WhatsApp.</p>
       </div>
       <div class="stats">
-        <div class="stat rv"><div class="n"><em>216</em></div><div class="l">pessoas pelo método</div></div>
+        <div class="stat rv"><div class="n"><em>216</em></div><div class="l">alunos no Método Remiyah</div></div>
         <div class="stat rv"><div class="n"><em>20 min</em></div><div class="l">por dia</div></div>
         <div class="stat rv"><div class="n"><em>7 dias</em></div><div class="l">pra concluir</div></div>
       </div>
@@ -619,7 +622,7 @@
         <div class="shot rv"><img src="depoimentos/01-maristela-captura.webp" loading="lazy" decoding="async" width="651" height="398" alt="Print de WhatsApp de Maristela Silvia: Acabei de fazer minha Grande Captura. Tirar tudo da cabeça e jogar no surrão me deixou mais ciente de tudo. O que mais me surpreendeu foi quantas coisas fazer. Legenda: Ficou claro o que realmente estava travando a vida dela. Uma libertação."></div>
         <div class="shot rv"><img src="depoimentos/02-audio-adiava.webp" loading="lazy" decoding="async" width="675" height="424" alt="Print de WhatsApp de aluno do desafio, resposta a um áudio: Verdade. Eu adiava muita coisa que simples de fazer. Ainda tem coisa para corrigir. Principalmente atividade de casa, eu ainda estou procrastinando. Semana que vamos tentar corrirgir. Legenda: Ele percebeu os padrões e descobriu o que corrigir e como corrigir."></div>
       </div>
-      <p class="disc rv">Resultados individuais. Depoimentos de alunos reais do Método Remiyah e podem variar conforme a dedicação.</p>
+      <p class="disc rv">Depoimentos de alunos do Método Remiyah, do qual este desafio é a porta de entrada. Resultados individuais podem variar conforme a dedicação.</p>
     </div>
   </section>
 
@@ -816,7 +819,7 @@
 
       <p class="note rv">Tudo isso por R$ 67. Mas antes do preço, preciso te mostrar algo importante.</p>
 
-      <div class="center mt40 rv"><a href="https://pay.hotmart.com/W105539649V?checkoutMode=10" class="cta large" target="_blank" rel="noopener">Quero começar o desafio <span class="arrow">&#8594;</span></a></div>
+      <div class="center mt40 rv"><a href="https://pay.hotmart.com/W105539649V?checkoutMode=10" class="cta large">Quero começar o desafio <span class="arrow">&#8594;</span></a></div>
     </div>
   </section>
 
@@ -875,7 +878,7 @@
         </div>
       </div>
 
-      <div class="center mt40 rv"><a href="https://pay.hotmart.com/W105539649V?checkoutMode=10" class="cta large" target="_blank" rel="noopener">Quero esse resultado <span class="arrow">&#8594;</span></a></div>
+      <div class="center mt40 rv"><a href="https://pay.hotmart.com/W105539649V?checkoutMode=10" class="cta large">Quero esse resultado <span class="arrow">&#8594;</span></a></div>
     </div>
   </section>
 
@@ -1014,7 +1017,7 @@
         </div>
         <p class="offer-parc">ou <b>3x de R$ 23,85</b> no cartão</p>
         <p class="offer-anchor"><b>R$ 23,85 por parcela</b> é menos do que uma pizza. E te devolve 7 dias de terreno que o inimigo não devolve sozinho.</p>
-        <div class="mt24"><a href="https://pay.hotmart.com/W105539649V?checkoutMode=10" class="cta large full" target="_blank" rel="noopener">Quero entrar no Desafio agora <span class="arrow">&#8594;</span></a></div>
+        <div class="mt24"><a href="https://pay.hotmart.com/W105539649V?checkoutMode=10" class="cta large full">Quero entrar no Desafio agora <span class="arrow">&#8594;</span></a></div>
         <div><span class="offer-secure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Ambiente 100% seguro &middot; Hotmart &middot; Cartão &middot; Pix &middot; Boleto</span></div>
       </div>
     </div>
@@ -1090,7 +1093,7 @@
       <div class="final-box rv">
         <p>A segunda-feira que vem vai ser idêntica a essa se você não quebrar o padrão agora. E daqui a 1 ano você vai estar exatamente onde está hoje, só que com mais um ano de talento enterrado e mais um ano de terreno cedido.</p>
       </div>
-      <div class="mt40 rv"><a href="https://pay.hotmart.com/W105539649V?checkoutMode=10" class="cta large" target="_blank" rel="noopener">Quero desenterrar meu talento &middot; R$ 67 <span class="arrow">&#8594;</span></a></div>
+      <div class="mt40 rv"><a href="https://pay.hotmart.com/W105539649V?checkoutMode=10" class="cta large">Quero desenterrar meu talento &middot; R$ 67 <span class="arrow">&#8594;</span></a></div>
       <p class="cta-note rv">Pagamento seguro &middot; Garantia 7 dias &middot; Acesso imediato</p>
     </div>
   </section>
@@ -1106,13 +1109,13 @@
     </div>
   </footer>
 
-  <!-- ============ STICKY (aparece depois do #metodo, some sobre #oferta e #cta-final) ============ -->
+  <!-- ============ STICKY (aparece depois do botão do hero, some sobre #oferta e #cta-final) ============ -->
   <div class="sticky-bar" id="sticky" role="complementary" aria-label="Chamada para ação fixa">
     <div class="sticky-bar-text">
       <strong>Desafio 7 Dias</strong>
       R$ 67 &middot; 20 min/dia
     </div>
-    <a href="https://pay.hotmart.com/W105539649V?checkoutMode=10" class="cta" target="_blank" rel="noopener">Quero começar <span class="arrow">&#8594;</span></a>
+    <a href="https://pay.hotmart.com/W105539649V?checkoutMode=10" class="cta">Quero começar <span class="arrow">&#8594;</span></a>
   </div>
 
   <!-- LEAD MODAL: captura nome/email/whatsapp antes do checkout. Dispara Lead (Pixel + CAPI) e grava no Supabase. CSS em style.css (não-crítico). -->
@@ -1210,6 +1213,42 @@
       window.addEventListener('resize', onScroll, { passive: true });
       /* Primeira medição fora do caminho da pintura: no parse ela forçava reflow. */
       requestAnimationFrame(update);
+    })();
+
+    /* medição: CliqueCTA (posicao = id da seção do botão) e Rolagem (25/50/75/100, uma vez cada).
+       Sem fbq ainda (pixel adiado pro idle), o clique não conta e a rolagem espera o próximo scroll. */
+    (function () {
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href*="pay.hotmart"]');
+        if (!a || !window.fbq) return;
+        var box = a.closest('#sticky, section[id], header[id]');
+        fbq('trackCustom', 'CliqueCTA', { posicao: box ? box.id : 'outro' });
+        /* Com pre-checkout o modal assume a navegação; com Ctrl/Cmd o navegador abre aba nova. */
+        if (window.FLAGS.preCheckout || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+        /* Checkout abre na mesma aba: segura 250 ms pro evento sair antes da troca de página, como o modal. */
+        e.preventDefault();
+        var dest = a.href;
+        setTimeout(function () { window.location.href = dest; }, 250);
+      });
+
+      var marcos = [25, 50, 75, 100];
+      var tick = false;
+      function medir() {
+        tick = false;
+        if (!window.fbq) return;
+        var doc = document.documentElement;
+        var pct = (window.scrollY + window.innerHeight) / doc.scrollHeight * 100;
+        while (marcos.length && pct >= marcos[0] - 1) {
+          fbq('trackCustom', 'Rolagem', { pct: marcos.shift() });
+        }
+        if (!marcos.length) window.removeEventListener('scroll', onScroll);
+      }
+      function onScroll() {
+        if (tick) return;
+        tick = true;
+        requestAnimationFrame(medir);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
     })();
   </script>
   <!-- HOTMART LAUNCHER SDK — carregado de forma não-bloqueante após LCP e scripts críticos -->
