@@ -98,24 +98,24 @@
 
 /* ============ FATIA 2 ============ */
 /* ============================================================
-   FATIA 2 — dores (#dores), mecanismo (#mecanismo), já tentou (#ja-tentou)
+   v9 FATIA A — espelho (#dores), virada (#mecanismo, com a tabela
+   que veio do antigo #ja-tentou)
    Prefixos exclusivos: .pain-  .mech-  .tried-
-   Reusa .card.dark.accent.lift (dores) e .card.ledge (já tentou) do style.css.
-   Mobile-first; breakpoints 640px e 900px.
+   Reusa .card.dark.accent.lift (espelho).
+   Mobile-first; breakpoints 640px e 720px.
 ============================================================ */
 
-/* ---------- 3. dores: grade de 6 cards escuros ---------- */
-.pain-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 12px; }
+/* ---------- 2. espelho: 4 cards escuros sobre papel, 2x2 a partir de 640px ---------- */
+.pain-grid { display: grid; grid-template-columns: 1fr; gap: 16px; max-width: 880px; margin: 12px auto 0; }
 @media (min-width: 640px) { .pain-grid { grid-template-columns: 1fr 1fr; } }
-@media (min-width: 900px) { .pain-grid { grid-template-columns: repeat(3, 1fr); } }
-.pain-card { text-align: center; padding: 24px 20px; }
-.pain-card p { font-size: .98rem; line-height: 1.45; }
+.pain-card { text-align: left; padding: 24px 22px; }
+.pain-card p { font-size: 1rem; line-height: 1.5; }
 /* quadrado do ícone: --pitch dentro do --void, ícone em --bone (sem cor rotativa) */
 .pain-ico {
-  width: 54px;
-  height: 54px;
-  margin: 0 auto 14px;
-  border-radius: 14px;
+  width: 48px;
+  height: 48px;
+  margin: 0 0 14px;
+  border-radius: 12px;
   background: var(--pitch);
   border: 1px solid var(--iron);
   color: var(--bone);
@@ -123,10 +123,19 @@
   align-items: center;
   justify-content: center;
 }
-.pain-ico svg { width: 28px; height: 28px; }
-.pain-close { max-width: 54ch; margin-left: auto; margin-right: auto; }
+.pain-ico svg { width: 26px; height: 26px; }
+/* rótulo "Parece X.": Bebas pequeno em --bone-hi, a cena vem logo abaixo em --bone */
+.card.dark .pain-tag {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: .04em;
+  line-height: 1.1;
+  color: var(--bone-hi);
+  margin-bottom: 8px;
+}
+.pain-close { max-width: 54ch; margin-left: auto; margin-right: auto; font-size: 1.08rem; font-weight: 600; color: var(--text); }
 
-/* ---------- 4. mecanismo: card de comparação ---------- */
+/* ---------- 4. virada: card de comparação ---------- */
 .mech-card {
   max-width: 760px;
   margin: 30px auto 0;
@@ -180,7 +189,7 @@
   border-bottom: 2px solid var(--bone-mute);
   transform: translateY(-50%) rotate(-45deg);
 }
-/* o destino de cada cadeia vira bloco: cova em sangue, terreno em osso */
+/* o destino de cada cadeia vira bloco: "fica pra amanhã" em sangue, "feito" em osso */
 .mech-line.hoje .mech-step:last-child { background: var(--blood); border-color: var(--blood); color: #FFFFFF; font-weight: 600; }
 .mech-line.desafio .mech-step:last-child { background: var(--bone); border-color: var(--bone); color: var(--void); font-weight: 600; }
 
@@ -204,34 +213,28 @@
 .mech-result small { display: block; font-size: .92rem; color: var(--bone-mute); margin-top: 4px; }
 .mech-close { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--iron); font-size: .98rem; }
 
-/* ---------- 5. já tentou: 5 cards com degrau + comparação ---------- */
-.tried-list { max-width: 780px; margin: 30px auto 0; display: flex; flex-direction: column; gap: 14px; }
-.tried-card { padding: 18px 20px; text-align: left; }
-.tried-card h3 { font-size: clamp(1.3rem, 1.8vw, 1.5rem); margin: 0 0 6px; }
-.tried-card p { font-size: 1rem; line-height: 1.5; }
-.tried-close {
-  max-width: 780px;
-  margin: 28px auto 0;
+/* ---------- 4. virada: tabela "outros métodos x desafio" sobre escuro ---------- */
+.tried-title {
+  max-width: 760px;
+  margin: 52px auto 0;
   text-align: center;
-  font-family: var(--font-display);
-  font-size: clamp(1.75rem, 3.2vw, 2.3rem);
+  font-size: clamp(1.6rem, 3.2vw, 2.15rem);
   letter-spacing: .03em;
   line-height: 1.1;
-  color: var(--text);
   text-wrap: balance;
 }
-.tried-cols { display: grid; grid-template-columns: 1fr; gap: 18px; max-width: 920px; margin: 34px auto 0; }
-@media (min-width: 900px) { .tried-cols { grid-template-columns: 1fr 1fr; } }
-.tried-col { border-radius: var(--radius); padding: 26px; border: 2px solid var(--void); background: #FFFFFF; }
-.tried-col.now { background: #FBF1F0; border-color: rgba(166, 19, 18, .3); }
-.tried-col.yes { background: rgba(215, 196, 180, .35); }
-.tried-col h3 { margin-bottom: 14px; }
-.tried-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 11px; }
-.tried-col li { position: relative; padding-left: 28px; font-size: 1rem; line-height: 1.5; color: var(--text); }
-.tried-col li svg { position: absolute; left: 0; top: 4px; width: 18px; height: 18px; }
-.tried-col.now li svg { color: var(--blood); }
-.tried-col.yes li svg { color: var(--void); }
-.tried-col li b { font-weight: 700; }
+.tried-cols { display: grid; grid-template-columns: 1fr; gap: 16px; max-width: 760px; margin: 26px auto 0; }
+@media (min-width: 720px) { .tried-cols { grid-template-columns: 1fr 1fr; } }
+.tried-col { border-radius: var(--radius); padding: 22px 20px; }
+.tried-col.now { background: var(--pitch); border: 1px solid var(--iron); }
+.tried-col.yes { background: rgba(215, 196, 180, .08); border: 2px solid var(--bone); }
+.tried-col h4 { font-size: 1.5rem; letter-spacing: .04em; line-height: 1.1; margin: 0 0 14px; }
+.tried-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.tried-col li { position: relative; padding-left: 32px; font-size: 1rem; line-height: 1.5; color: var(--bone); }
+/* ícone em bloco: X branco sobre --blood (vermelho é bloco), check --void sobre --bone */
+.tried-col li svg { position: absolute; left: 0; top: 2px; width: 22px; height: 22px; padding: 3px; border-radius: 50%; }
+.tried-col.now li svg { background: var(--blood); color: #FFFFFF; }
+.tried-col.yes li svg { background: var(--bone); color: var(--void); }
 
 @media (prefers-reduced-motion: reduce) {
   .mech-bar i { transition: none; }
@@ -242,7 +245,7 @@
 /* ============ FATIA 3 ============ */
 /* ============================================================
    FATIA 3 — método (.method-*), o que muda (.change-*),
-   evolução (.evo-*), a dúvida (.doubt-*). Só regras novas.
+   evolução (.evo-*). Só regras novas.
 ============================================================ */
 
 /* ---------- 6. método: 3 pilares ---------- */
@@ -324,6 +327,7 @@
 .evo-group { max-width: 712px; margin-left: auto; margin-right: auto; text-align: center; }
 .evo-group .shots { margin-top: 6px; }
 .evo-group .shot-solo { margin-top: 6px; }
+.evo-line { max-width: 52ch; margin: 0 auto 14px; font-size: 1.02rem; line-height: 1.55; color: var(--text-soft); }
 
 @media (prefers-reduced-motion: reduce) {
   .method-pillar { transition: none; }
@@ -331,7 +335,7 @@
 
 /* ============ FATIA 4 ============ */
 /* ============================================================
-   FATIA 4 — entregáveis (.deliv-), bônus (.bonus-), garantia (.seal-),
+   FATIA 4 — entregáveis (.deliv-) com bônus dentro (.bonus-), garantia (.seal-),
    oferta (.offer-). Só regras novas; base vem do crítico e do style.css.
    Mobile-first; breakpoints 640 / 900.
 ============================================================ */
@@ -373,22 +377,11 @@
   color: var(--text);
   margin-bottom: 3px;
 }
-.deliv-more { text-align: center; margin-top: 30px; }
-.deliv-more-t {
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 2.6vw, 1.9rem);
-  letter-spacing: .04em;
-  line-height: 1.05;
-  color: var(--text);
-}
-.deliv-more-s { font-size: .95rem; font-weight: 600; margin-top: 6px; }
-.deliv-more-arrow { width: 15px; height: 15px; display: inline-block; vertical-align: -2px; margin-left: 6px; }
 
 /* ícones animados (mesma lógica do modelo) */
 @keyframes deliv-bar { 0%, 100% { transform: scaleY(.35); } 50% { transform: scaleY(1); } }
 @keyframes deliv-draw14 { 0% { stroke-dashoffset: 14; } 40%, 70% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -14; } }
 @keyframes deliv-blink { 0%, 60%, 100% { opacity: .25; } 30% { opacity: 1; } }
-@keyframes deliv-down { 0%, 100% { transform: translateY(-2px); } 50% { transform: translateY(3px); } }
 .deliv-i-audio .w { transform-box: fill-box; transform-origin: center; animation: deliv-bar 1.5s var(--ease) infinite; }
 .deliv-i-audio .w2 { animation-delay: .15s; } .deliv-i-audio .w3 { animation-delay: .3s; }
 .deliv-i-audio .w4 { animation-delay: .45s; } .deliv-i-audio .w5 { animation-delay: .6s; }
@@ -397,16 +390,26 @@
 .deliv-i-chart .b2 { animation-delay: .2s; } .deliv-i-chart .b3 { animation-delay: .4s; }
 .deliv-i-chat .d { opacity: .25; animation: deliv-blink 1.3s infinite; }
 .deliv-i-chat .d2 { animation-delay: .2s; } .deliv-i-chat .d3 { animation-delay: .4s; }
-.deliv-more-arrow { animation: deliv-down 1.5s ease-in-out infinite; }
 
-/* ---------- bônus (sobre escuro) ---------- */
-.bonus-list { display: flex; flex-direction: column; gap: 14px; max-width: 720px; margin: 0 auto; }
+/* ---------- bônus (dentro de #entregaveis, sobre papel) ---------- */
+.bonus-head {
+  max-width: 660px;
+  margin: 40px auto 18px;
+  text-align: center;
+  font-size: clamp(1.6rem, 2.8vw, 2rem);
+  letter-spacing: .04em;
+  line-height: 1.05;
+}
+.bonus-list { display: flex; flex-direction: column; gap: 14px; max-width: 660px; margin: 0 auto; }
+/* mesmo degrau do .deliv-item, com o filete --blood à esquerda que marcava o bônus no escuro */
 .bonus-item {
-  background: var(--pitch);
-  color: var(--bone);
-  border-left: 4px solid var(--blood);
+  background: #FFFFFF;
+  color: var(--text);
+  border: 2px solid var(--void);
+  border-left: 6px solid var(--blood);
   border-radius: 20px;
-  padding: 22px 20px;
+  box-shadow: 0 4px 0 var(--void);
+  padding: 20px 18px;
   display: flex;
   gap: 16px;
   align-items: flex-start;
@@ -417,9 +420,9 @@
   width: 46px;
   height: 46px;
   border-radius: 12px;
-  background: var(--void);
-  color: var(--bone-hi);
-  border: 1px solid var(--iron);
+  background: var(--bone);
+  color: var(--void);
+  border: 2px solid var(--void);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -439,15 +442,15 @@
   border-radius: 4px;
   margin-bottom: 10px;
 }
-.bonus-item h3 { color: var(--bone-hi); font-size: clamp(1.35rem, 2vw, 1.6rem); margin-bottom: 6px; }
-.bonus-item p { color: var(--bone); font-size: 1rem; line-height: 1.5; }
+.bonus-item h3 { color: var(--text); font-size: clamp(1.35rem, 2vw, 1.6rem); margin-bottom: 6px; }
+.bonus-item p { color: var(--text-soft); font-size: 1rem; line-height: 1.5; }
 .bonus-val {
   display: inline-block;
   margin-top: 14px;
   padding: 6px 12px;
-  border: 1.5px solid var(--bone);
+  border: 1.5px solid var(--void);
   border-radius: 999px;
-  color: var(--bone-hi);
+  color: var(--text);
   font-size: .9rem;
   font-weight: 700;
 }
@@ -590,7 +593,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .deliv-i-audio .w, .deliv-i-check .tick, .deliv-i-chart rect, .deliv-i-chat .d, .deliv-more-arrow,
+  .deliv-i-audio .w, .deliv-i-check .tick, .deliv-i-chart rect, .deliv-i-chat .d,
   .bonus-i-play .ring, .bonus-i-play .tri, .bonus-i-person .bub { animation: none !important; }
   .deliv-i-check .tick { stroke-dashoffset: 0; }
   .deliv-i-chat .d { opacity: 1; }
