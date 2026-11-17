@@ -1,0 +1,67 @@
+name: Deploy no cPanel
+
+# A cada push na main: "Update from Remote" + "Deploy HEAD Commit" no cPanel via UAPI.
+# O que é copiado e pra onde continua definido no .cpanel.yml.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-cpanel
+  cancel-in-progress: false
+
+env:
+  CPANEL_HOST: br238.hostgator.com.br
+  CPANEL_USER: ewertt82
+  REPO_NAME: desafio-talento-enterrado
+  LIVE_URL: https://ebravoholdingo.shop/desafio-talento-enterrado/
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pull e deploy no cPanel
+        env:
+          CPANEL_TOKEN: ${{ secrets.CPANEL_TOKEN }}
+        run: |
+          set -euo pipefail
+          api() {
+            curl -sS --fail-with-body --max-time 60 \
+              -H "Authorization: cpanel ${CPANEL_USER}:${CPANEL_TOKEN}" \
+              "https://${CPANEL_HOST}:2083/execute/$1"
+          }
+          check() {
+            if [ "$(echo "$1" | jq -r '.status')" != "1" ]; then
+              echo "::error::$2 falhou: $(echo "$1" | jq -c '.errors')"; exit 1
+            fi
+          }
+
+          # O caminho absoluto do clone varia (/home, /home2...): busca pelo nome do repositório.
+          R=$(api "VersionControl/retrieve"); check "$R" "Listar repositórios"
+          ROOT=$(echo "$R" | jq -r --arg n "$REPO_NAME" '.data[] | select(.repository_root | endswith("/" + $n)) | .repository_root' | head -n1)
+          [ -n "$ROOT" ] || { echo "::error::Repositório $REPO_NAME não encontrado no cPanel"; exit 1; }
+          echo "Clone no cPanel: $ROOT"
+
+          U=$(api "VersionControl/update?repository_root=$(jq -rn --arg v "$ROOT" '$v|@uri')&branch=main"); check "$U" "Update from Remote"
+          D=$(api "VersionControlDeployment/create?repository_root=$(jq -rn --arg v "$ROOT" '$v|@uri')"); check "$D" "Deploy HEAD Commit"
+          echo "Deploy enfileirado."
+
+      - name: Confere a versão publicada
+        run: |
+          set -euo pipefail
+          WANT=$(grep -o 'style\.css?v=[0-9a-f]*' index.html | head -n1)
+          for i in $(seq 1 12); do
+            GOT=$(curl -sS --max-time 20 -H 'Cache-Control: no-cache' "${LIVE_URL}?d=${GITHUB_SHA}" | grep -o 'style\.css?v=[0-9a-f]*' | head -n1 || true)
+            if [ "$GOT" = "$WANT" ] && curl -sS --max-time 20 "${LIVE_URL}?d=${GITHUB_SHA}" | cmp -s - index.html; then
+              echo "No ar: index.html idêntico ao commit ${GITHUB_SHA::7}."; exit 0
+            fi
+            sleep 10
+          done
+          echo "::error::Depois de 2 min o index.html no ar ainda difere do commit."; exit 1
